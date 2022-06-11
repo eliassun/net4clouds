@@ -34,7 +34,7 @@ resource "aws_internet_gateway" "prod_internet_gw_1" {
     vpc_id = aws_vpc.prod_vpc_1.id
 }
 
-# Create a route table
+# Create a route table for the production network
 
 resource "aws_route_table" "prod_route_table_1" {
     vpc_id = aws_vpc.prod_vpc_1.id
@@ -51,7 +51,7 @@ resource "aws_route_table" "prod_route_table_1" {
     }
 }
 
-# Create a subnet
+# Create a subnet for the production network
 resource "aws_subnet" "prod_vpc_1_subnet_1" {
     vpc_id            = aws_vpc.prod_vpc_1.id
     cidr_block        = var.subnet_prod_vpc_1[0].cidr_block
@@ -61,7 +61,7 @@ resource "aws_subnet" "prod_vpc_1_subnet_1" {
     }
 }
 
-# Associate subnet to routetable 
+# Associate the production network subnet to routetable 
 
 resource "aws_route_table_association" "prod_1_net_1" {
     subnet_id      = aws_subnet.prod_vpc_1_subnet_1.id
@@ -212,4 +212,3 @@ output "us-east-2-elb01-dns-name" {
   description = "The DNS name of the ELB"
   value       = aws_elb.us-east-2-elb01.dns_name
 }
-
