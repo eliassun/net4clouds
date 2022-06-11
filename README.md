@@ -1,4 +1,5 @@
 
+prod_net:
 
 This project builds networks for different Cloud Service Providers based on terraform. Run the projec, then it will generate services:
 1. A basic Web service
@@ -42,7 +43,6 @@ Best security pratices in the project:
 2. Hide the key instead of any static key in the project to prevent any key(e.g. AWS keys) to be pushed to github or any public place
 
 
-===================
-dev_net
-===================
+dev_net:
+
 This project builds a network for the developer to build Python and Go Apps.
