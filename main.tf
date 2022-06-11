@@ -1,12 +1,23 @@
+# Create a network by Terraform
+# github: https://github.com/eliassun/net4clouds
+
 terraform {
 
+}
+
+# get my current public IP and keys
+
+data "external" "local_env" {
+  program = ["python3","local_env.py"]
+  query = {
+  }
 }
 
 # CSP is AWS
 provider "aws" {
     region     = var.defaul_region
-    access_key = var.access_key
-    secret_key = var.secret_key
+    access_key = var.access_key != "your_aws_access_key" ? var.access_key : data.external.local_env.result.aws_access_key
+    secret_key = var.secret_key != "your_aws_secret_key" ? var.secret_key : data.external.local_env.result.aws_secret_key
 }
 
 # Create a VPC
@@ -82,7 +93,7 @@ resource "aws_security_group" "prod_1_sg_1" {
         from_port   = 22
         to_port     = 22
         protocol    = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]      
+        cidr_blocks = ["${data.external.local_env.result.local_public_ip}/32"]      
     }
     egress {
         from_port   = 0

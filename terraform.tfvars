@@ -1,5 +1,5 @@
-access_key         = "your-access_key"
-secret_key         = "your-secret_key"
+access_key         = "your_aws_access_key"
+secret_key         = "your_aws_secret_key"
 defaul_region      = "us-east-2"
 
 prod_vpc_cidrs     = ["172.16.0.0/16"]

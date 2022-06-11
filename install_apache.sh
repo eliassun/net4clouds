@@ -1,4 +1,5 @@
 #! /bin/bash
+# github: https://github.com/eliassun/net4clouds
 sudo apt-get update
 sudo apt-get install -y apache2
 sudo systemctl start apache2

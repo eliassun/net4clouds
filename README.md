@@ -21,7 +21,7 @@ After running this program, you should be able to test the results:
 
 More:
 install_apache.sh is a shell script to install apache2 after a EC2 is launched. 
-install_softwares.sh is a python script to install apache2 and other softwares after a EC2 is launched. 
+install_softwares.sh is a python script to install apache2 and other softwares automatically after a EC2 is launched. 
 
 
 Network components are created in AWS:
@@ -35,3 +35,6 @@ Network components are created in AWS:
 8. Ubuntu EC2 Instance
 9. Elastic Load Balancer
 
+Best security pratices in the project:
+1. SSH is only allowed from the same IP to run this project
+2. Hide the key instead of any static key in the project to prevent any key(e.g. AWS keys) to be pushed to github or any public place
