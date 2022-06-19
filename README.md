@@ -52,7 +52,11 @@ Best security pratices in the project:
 dev_net:
 
 This project builds a cloud developement env to build Python and Go Apps. The network is created by the Python code along with the Terraform.
-For example, if it needs to create a new EC2, cmd_create_aws_ec2 will work: 
+For example, if it needs to create a new EC2, cmd_create_aws_ec2 can make it, any of commands below will work: 
+
 python3 main.py cmd_create_aws_ec2 --name host_name --ami ami_name --size ec2_size --key key_pair  --az az_name
-python3 main.py cmd_create_aws_ec2 
+
 python3 main.py cmd_create_aws_ec2 --name elias-ubuntu --size t2.micro
+
+python3 main.py cmd_create_aws_ec2 
+
