@@ -53,4 +53,4 @@ This project builds a cloud developement env to build Python and Go Apps. The ne
 For example, if it needs to create a new EC2, cmd_create_aws_ec2 will work: 
 python3 main.py cmd_create_aws_ec2 --name host_name --ami ami_name --size ec2_size --key key_pair  --az az_name
 python3 main.py cmd_create_aws_ec2 
-python3 main.py cmd_create_aws_ec2 --name elias-ubuntu --szie t2.micro
+python3 main.py cmd_create_aws_ec2 --name elias-ubuntu --size t2.micro
