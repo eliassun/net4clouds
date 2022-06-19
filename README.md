@@ -1,3 +1,7 @@
+This repository has two projects.
+prod_net: Set up a network for a production service automatically by Terraform, e.g. a web service
+dev_net: Set up an environment for the cloud development automatically. The entry is a Python program to drive Terraform and others(e.g. Go). 
+
 
 prod_net:
 
@@ -45,4 +49,8 @@ Best security pratices in the project:
 
 dev_net:
 
-This project builds a network for the developer to build Python and Go Apps.
+This project builds a cloud developement env to build Python and Go Apps. The network is created by the Python code along with the Terraform.
+For example, if it needs to create a new EC2, cmd_create_aws_ec2 will work: 
+python3 main.py cmd_create_aws_ec2 --name host_name --ami ami_name --size ec2_size --key key_pair  --az az_name
+python3 main.py cmd_create_aws_ec2 
+python3 main.py cmd_create_aws_ec2 --name elias-ubuntu --szie t2.micro

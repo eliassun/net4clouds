@@ -1,7 +1,5 @@
 # github: https://github.com/eliassun/net4clouds
-
 # Create a network by Terraform
-
 
 terraform {
 

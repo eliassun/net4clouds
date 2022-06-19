@@ -11,7 +11,6 @@ variable "secret_key" {
     type = string
 }
 
-
 # CSP is AWS
 provider "aws" {
     region     = var.defaul_region
